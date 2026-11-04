@@ -3,3 +3,13 @@
 @media(max-width:850px){.nav{display:none}.menuToggle{display:block;background:none;border:0;font-size:21px;margin-inline-start:auto;padding:7px}.nav.open{position:absolute;inset:100% 0 auto;background:var(--paper);display:grid;padding:15px var(--pad);border-bottom:1px solid;gap:0}.nav a{padding-block:8px}.works{grid-template-columns:repeat(3,minmax(0,1fr))}.header{min-height:62px}}
 @media(max-width:640px){.hero{grid-template-columns:minmax(0,1fr);grid-template-areas:'folio' 'art' 'text';gap:22px;padding-top:14px}.heroMedia{width:min(82%,315px);margin:auto}.caption{margin-top:15px;font-size:9px}.hero h1{font-size:clamp(55px,15vw,85px);margin:10px 0}.bars{display:none}.heroInner>p{max-width:none}.folio{font-size:10px}.btnRow{margin-top:16px}.salePanel,.songFlex,.about,.intro,.releaseGrid{grid-template-columns:1fr}.saleArt{display:none}.cover{width:58%}.photoGrid,.works{grid-template-columns:1fr 1fr}.aboutPortrait img{height:340px;object-position:center 30%}.intro .photoButton{width:55%}.visualGrid{gap:8px}.releaseCard{grid-template-columns:34% 1fr}.footer .btn{display:none}.workTitle{font-size:20px}.lightboxControls .btn{font-size:12px}.header{gap:10px}.brand{font-size:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.photoButton img{transition:none}}
+
+@font-face{font-family:Ray;src:url("assets/ray-regular.woff") format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:Ray;src:url("assets/ray-bold.woff") format("woff");font-weight:700;font-display:swap}
+html[lang=fa]{--serif:Ray,Tahoma,sans-serif}
+html[lang=fa] body,html[lang=fa] :is(.folio,.caption,.eyebrow,.number){font-family:Ray,Tahoma,sans-serif}
+#heroHeading{margin:16px 0 12px}
+.singleLogo{width:min(100%,420px);height:auto}
+.titleText{display:block;font:600 15px/1.45 Arial,sans-serif;letter-spacing:normal;margin-top:.3em}
+html[lang=fa] .titleText{font:700 20px/1.5 Ray,Tahoma,sans-serif}
+@media(max-width:640px){.singleLogo{width:min(76%,290px)}}
