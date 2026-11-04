@@ -104,3 +104,31 @@ function init(){renderSharedLinks();applyLang(language);
  setInterval(()=>{if(SITE_CONFIG.releaseMode==='auto'&&determineMode()!==mode)updateModeText();else if(mode==='pre')drawCountdown()},1000);
 }
 init();
+
+for (const track of document.querySelectorAll('.photoGrid,.visualGrid')) {
+  if (track.classList.contains('visualGrid')) {
+    for (const key of ['portrait_dark','portrait_sea','portrait_bw']) {
+      const source=document.querySelector('.photoGrid [data-gallery="'+key+'"]');
+      const figure=document.createElement('figure');
+      const button=source.cloneNode(true);
+      button.addEventListener('click',()=>openPhoto(key));
+      figure.append(button);
+      track.append(figure);
+    }
+  }
+  const controls=document.createElement('div');
+  controls.className='galleryControls';
+  track.after(controls);
+  for(const step of [-1,1]){
+    const button=document.createElement('button');
+    const refresh=()=>{
+      const fa=document.documentElement.lang==='fa';
+      button.textContent=(step===1)!==fa?'→':'←';
+      button.setAttribute('aria-label',fa?(step===1?'عکس بعدی':'عکس قبلی'):(step===1?'Next photo':'Previous photo'));
+    };
+    refresh();
+    new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    button.onclick=()=>track.scrollBy({left:(document.documentElement.dir==='rtl'?-1:1)*step*(track.firstElementChild.getBoundingClientRect().width+14),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    controls.append(button);
+  }
+}

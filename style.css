@@ -13,3 +13,18 @@ html[lang=fa] body,html[lang=fa] :is(.folio,.caption,.eyebrow,.number){font-fami
 .titleText{display:block;font:600 15px/1.45 Arial,sans-serif;letter-spacing:normal;margin-top:.3em}
 html[lang=fa] .titleText{font:700 20px/1.5 Ray,Tahoma,sans-serif}
 @media(max-width:640px){.singleLogo{width:min(76%,290px)}}
+
+:root{--pad:max(22px,calc((100% - 1080px)/2))}
+.hero{column-gap:36px;row-gap:28px;padding-block:15px 36px}
+.heroMedia{width:min(100%,380px);justify-self:center}
+.singleLogo{max-width:280px}
+h2{font-size:clamp(29px,3.8vw,49px)}
+main>section:not(.hero),.supportBottom{padding-block:40px}
+.aboutPortrait img{max-height:420px}
+.photoGrid,.visualGrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:8px}
+.photoGrid>*,.visualGrid>*{flex:0 0 calc((100% - 28px)/3);min-width:0;scroll-snap-align:start}
+.photoGrid img,.visualGrid img{height:clamp(145px,18vw,190px);aspect-ratio:auto;object-fit:cover;object-position:center 35%}
+.visualGrid [data-gallery=cover] img{object-fit:contain;background:#e5e1d8}
+.galleryControls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.galleryControls button{width:44px;height:44px;background:none;color:inherit;border:1px solid;border-radius:50%;font:20px Arial}
+@media(max-width:640px){:root{--pad:18px}.hero{gap:12px;padding-block:10px 24px}.heroMedia{width:min(56vw,210px)}.singleLogo{max-width:160px}.hero .sub{font-size:19px}.caption{margin-top:10px}.hero .btnRow{gap:6px}.hero .btn{padding-inline:12px}.photoGrid>*,.visualGrid>*{flex-basis:76%}.photoGrid img,.visualGrid img{height:160px}main>section:not(.hero),.supportBottom{padding-block:28px}}
