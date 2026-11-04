@@ -28,3 +28,10 @@ main>section:not(.hero),.supportBottom{padding-block:40px}
 .galleryControls{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
 .galleryControls button{width:44px;height:44px;background:none;color:inherit;border:1px solid;border-radius:50%;font:20px Arial}
 @media(max-width:640px){:root{--pad:18px}.hero{gap:12px;padding-block:10px 24px}.heroMedia{width:min(56vw,210px)}.singleLogo{max-width:160px}.hero .sub{font-size:19px}.caption{margin-top:10px}.hero .btnRow{gap:6px}.hero .btn{padding-inline:12px}.photoGrid>*,.visualGrid>*{flex-basis:76%}.photoGrid img,.visualGrid img{height:160px}main>section:not(.hero),.supportBottom{padding-block:28px}}
+
+#heroHeading{direction:ltr;text-align:left;width:min(100%,280px)}
+#heroHeading .singleLogo{width:100%;margin:0}
+#heroHeading .titleText{position:relative;width:fit-content;margin:-12% 0 0 53%;white-space:nowrap;text-shadow:0 0 3px var(--paper)}
+html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
+html[lang=fa] #heroHeading .titleText{direction:rtl}
+@media(max-width:640px){#heroHeading{width:min(100%,160px)}#heroHeading .titleText{font-size:13px}}
