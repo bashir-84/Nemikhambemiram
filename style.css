@@ -34,3 +34,14 @@ main>section:not(.hero),.supportBottom{padding-block:40px}
 #heroHeading .titleText{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
 @media(max-width:640px){#heroHeading{width:min(100%,160px)}}
+
+#gallery .portraitStage{display:block;position:relative;isolation:isolate;overflow:hidden;perspective:950px;direction:ltr;height:clamp(185px,25vw,280px);margin:18px 0 0;padding:0;touch-action:pan-y}
+.portraitStage>.photoButton{--x:0%;--angle:0deg;--size:1;position:absolute;top:50%;left:50%;width:min(53%,255px);height:88%;border-radius:14px;border:1px solid #aaa9;box-shadow:0 5px 15px #0004;transform:translate(-50%,-50%) translateX(var(--x)) rotateY(var(--angle)) scale(var(--size));transition:transform .65s ease,opacity .5s;z-index:3}
+#gallery .portraitStage img{height:100%;object-fit:cover;transform:none}
+.portraitStage>[data-slot="1"],.portraitStage>[data-slot="-1"]{--x:85%;--angle:-27deg;--size:.82;z-index:2;filter:brightness(.83)}
+.portraitStage>[data-slot="-1"]{--x:-85%;--angle:27deg}
+.portraitStage>[data-slot="2"],.portraitStage>[data-slot="-2"]{--x:148%;--angle:-40deg;--size:.69;z-index:1;filter:brightness(.68)}
+.portraitStage>[data-slot="-2"]{--x:-148%;--angle:40deg}
+.portraitStage>[data-slot="3"]{opacity:0;pointer-events:none;z-index:0}
+.portraitControls{justify-content:center;align-items:center;font:13px monospace}
+@media(prefers-reduced-motion:reduce){.portraitStage>.photoButton{transition:none}}
