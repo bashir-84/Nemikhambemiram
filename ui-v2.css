@@ -151,3 +151,56 @@ body:has(dialog[open]) {overflow:hidden}
   .photoButton img,#gallery .portraitStage>.photoButton,.btn {transition:none}
   .record i {animation:none}
 }
+
+/* Other music, inspired by the artist link-list reference. */
+#music{
+  --music-bg:#23264a;
+  background:var(--music-bg);color:#faf8f1;
+  border-color:#ffffff29;
+}
+#music .blockHeading{margin-bottom:6px}
+#music>p{color:#d5d5e1}
+#music .releaseGrid{display:flex;flex-direction:column;gap:0;max-width:780px;margin:28px auto 0}
+#music .releaseCard{
+  position:relative;display:grid;grid-template-columns:86px minmax(0,1fr) 32px;
+  align-items:center;gap:24px;min-height:132px;border:0;
+  border-bottom:1px solid #ffffff1c;padding:22px 0;
+}
+#music .releaseCard>img{width:86px;height:86px;object-fit:contain;border-radius:3px}
+#music .releaseCard>div{text-align:center}
+#music .releaseCard h3{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.4}
+#music .releaseCard .small{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#music .releaseCard .footnote{font-size:12px;margin-top:5px;color:#d5d5e1}
+#music .musicListen{
+  position:absolute;inset:0;border:0;border-radius:4px;background:none;color:inherit;
+  text-decoration:none;cursor:pointer;font-size:0;
+}
+#music .musicListen::after{content:'›';position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);font:34px/1 Arial}
+html[dir=rtl] #music .musicListen::after{content:'‹'}
+#music .musicListen[aria-disabled=true]{pointer-events:none}
+#music .musicListen:hover{background:#ffffff08}
+#music .musicAccessibleText{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#music .releaseCard.musicExtra:not(:has(img)){grid-template-columns:minmax(0,1fr) 32px}
+#music .releaseCard.musicExtra>button{font-size:0}
+#music .musicPlatforms{
+  display:flex;justify-content:center;gap:clamp(2px,2vw,22px);direction:ltr;
+  max-width:780px;margin:40px auto 0;
+}
+#music .musicPlatform{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:52px;height:52px;flex:0 1 52px;min-width:36px;
+  padding:8px;border:0;border-radius:8px;background:none;color:inherit;
+  text-decoration:none;transition:background-color .18s;
+}
+#music .musicPlatform svg{display:block;width:34px;height:34px}
+#music .musicPlatform:hover{background:#ffffff14}
+#music .musicLinkStatus{min-height:1.7em;text-align:center;font-size:12px;margin-top:12px;max-width:none}
+@media(max-width:640px){
+  #music .releaseGrid{margin-top:20px}
+  #music .releaseCard{grid-template-columns:70px minmax(0,1fr) 24px;gap:12px;min-height:112px;padding-block:18px}
+  #music .releaseCard>img{width:70px;height:70px}
+  #music .releaseCard h3{font-size:24px}
+  #music .musicPlatforms{gap:0;margin-top:30px;justify-content:space-between}
+  #music .musicPlatform{width:40px;height:46px;flex-basis:40px;min-width:0;padding:6px}
+  #music .musicPlatform svg{width:28px;height:28px}
+}

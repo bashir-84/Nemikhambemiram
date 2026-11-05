@@ -9,7 +9,7 @@
 <meta name="description" content="Nogol Zakerian — Nemikham Bemiram. New single, early access, music, visuals and audiovisual works.">
 <title>Nogol Zakerian · Nemikham Bemiram</title>
 <link rel="stylesheet" href="style.css">
-<html><head><link rel="stylesheet" href="ui-v2.css"></head></html>
+<link rel="stylesheet" href="ui-v2.css">
 </head>
 <body data-mode="pre">
 <a class="skip" href="#main">Skip to content</a>
@@ -121,19 +121,20 @@
 <button type="button" class="btn" id="openStatement"><span data-i18n="statementBtn">Read Full Artist Statement</span> ↗</button>
 </div></section>
 <section class="quote"><blockquote data-i18n="quote">“For me, making music is a way of giving form to the intensity and complexity of being human.”</blockquote></section>
-<section class="block music" id="music"><div class="blockHeading"><h2 data-i18n="musicTitle">Explore My Music</h2></div>
+<section class="block music musicDirectory" id="music"><div class="blockHeading"><h2 data-i18n="musicTitle">Explore My Music</h2></div>
 <p data-i18n="musicSub" class="muted">Previous releases</p>
 <div class="releaseGrid">
 <article class="releaseCard"><img data-img="doone" alt="Doone cover" loading="lazy" src="assets/doone.webp" width="920" height="920" decoding="async"><div>
 <h3 data-i18n="dooneTitle">Doone</h3>
 <p class="small muted" data-i18n="artist">Nogol Zakerian</p>
-<a id="dooneLink" class="btn" target="_blank" rel="noopener noreferrer"><span data-i18n="listenBtn">Listen Now</span> ↗</a>
+<a id="dooneLink" class="musicListen" target="_blank" rel="noopener noreferrer"><span data-i18n="listenBtn" class="musicAccessibleText">Listen Now</span> ↗</a>
 </div></article><article class="releaseCard"><img data-img="night" alt="The Night cover" loading="lazy" src="assets/night.webp" width="920" height="920" decoding="async"><div>
 <h3 data-i18n="nightTitle">The Night</h3>
 <p class="small muted" data-i18n="artist">Nogol Zakerian</p>
-<a id="nightLink" class="btn" target="_blank" rel="noopener noreferrer"><span data-i18n="listenBtn">Listen Now</span> ↗</a><p class="footnote" id="nightStatus"></p>
+<a id="nightLink" class="musicListen" target="_blank" rel="noopener noreferrer"><span data-i18n="listenBtn" class="musicAccessibleText">Listen Now</span> ↗</a><p class="footnote" id="nightStatus"></p>
 </div></article>
-</div></section>
+</div>
+<nav class="musicPlatforms" aria-label="Music platforms"></nav><p class="musicLinkStatus" id="musicLinkStatus" role="status"></p></section>
 <section class="block tashang" id="tashang"><div class="blockHeading"><h2 data-i18n="tashangTitle">Tas.Hang</h2></div>
 <p class="serif" style="font-size:1.3rem" data-i18n="tashangSub">Five Audiovisual Works</p>
 <div class="intro">
@@ -200,5 +201,6 @@
 <script src="release.js"></script>
 <script src="copy.js"></script>
 <script src="app.js"></script>
+<html><head><script src="music.js"></script></head></html>
 </body>
 </html>
