@@ -1,0 +1,206 @@
+/* Targeted UI refinements. Original identity and assets live in style.css. */
+:root {
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:18px;
+  --space-4:24px;
+  --space-5:36px;
+  --space-6:48px;
+  --type-body:16px;
+  --type-caption:12px;
+  --type-section:clamp(29px,3.1vw,44px);
+  --type-subtitle:clamp(23px,2.2vw,29px);
+  --radius-control:28px;
+  --radius-image:12px;
+  --ease-ui:cubic-bezier(.22,.61,.36,1);
+}
+body {font-size:var(--type-body);line-height:1.7}
+main>section:not(.hero),.supportBottom {padding-block:var(--space-6)}
+h2 {font-size:var(--type-section);letter-spacing:-.035em;line-height:1.16;text-wrap:balance}
+h3 {font-size:var(--type-subtitle);line-height:1.25}
+html[lang=fa] body {line-height:1.9}
+html[lang=fa] :is(h2,h3) {line-height:1.5;letter-spacing:0}
+.blockHeading {margin-bottom:var(--space-2)}
+main>section>p,.aboutContent p,.intro p {max-inline-size:65ch}
+.hero {column-gap:var(--space-6);row-gap:var(--space-4);padding-block:var(--space-3) var(--space-5);align-items:center}
+.heroInner,.heroMedia,.songFlex>*,.about>*,.intro>*,.releaseCard>*,.work {min-inline-size:0}
+.heroInner {max-inline-size:490px}
+#heroHeading {width:min(100%,290px);margin-block:var(--space-3)}
+.hero .sub {font-size:clamp(21px,2.1vw,28px);line-height:1.45;text-wrap:balance}
+.heroInner>p {max-inline-size:42ch;margin-top:var(--space-2)}
+.heroMedia {width:min(100%,360px)}
+.hero .bars {height:12px;width:58px;margin-bottom:var(--space-2);opacity:.7}
+.caption {margin-top:var(--space-4);font-size:11px;letter-spacing:.04em}
+.folio {gap:var(--space-2);flex-wrap:wrap}
+.eyebrow {line-height:1.65}
+.btnRow,.linkRow {gap:var(--space-2);margin-top:var(--space-4)}
+.btn,.streamGrid a,.dialogTop button,.lightboxControls button {
+  min-height:44px;border-radius:var(--radius-control);font-size:14px;line-height:1.45;
+  padding:11px 18px;text-align:center;transition:background-color .18s var(--ease-ui),box-shadow .18s var(--ease-ui);
+  white-space:normal;max-inline-size:100%;
+}
+.btn:hover {box-shadow:inset 0 0 0 1px currentColor}
+a:focus-visible,button:focus-visible,summary:focus-visible {
+  outline:3px solid var(--sky,#718fc5);outline-offset:4px;
+}
+.header {gap:var(--space-4)}
+.langSwitch button {min-width:36px;min-height:36px}
+.menuToggle {min-width:44px;min-height:44px}
+.nav a {padding-block:10px}
+.salePanel {grid-template-columns:120px minmax(0,1fr);gap:var(--space-5)}
+.saleArt img {max-width:120px;box-shadow:3px 4px #102a82}
+.saleContent {max-inline-size:70ch}
+.sale h2 {margin-block:var(--space-1) var(--space-3)}
+.songFlex,.about {gap:var(--space-6)}
+.songFlex .cover {max-width:290px}
+.songFlex h3 {margin-block:var(--space-2)}
+.info {font-size:14px;margin-block:var(--space-4)}
+.info td {vertical-align:top;padding-block:9px}
+.info td:first-child {padding-inline-end:var(--space-3);width:34%}
+.info td:last-child {overflow-wrap:anywhere}
+.aboutPortrait img {max-height:420px}
+.aboutContent .btn {margin-top:var(--space-4)}
+.quote blockquote {font-size:clamp(26px,3.2vw,44px);line-height:1.35;max-inline-size:30ch}
+.releaseGrid,.visualGrid,.photoGrid,.works {gap:var(--space-3);margin-top:var(--space-4)}
+.releaseCard {gap:var(--space-3);grid-template-columns:38% minmax(0,1fr)}
+.releaseCard img {aspect-ratio:1;object-fit:contain}
+.releaseCard h3 {font-size:26px}
+.intro {gap:var(--space-5);margin-block:var(--space-4);align-items:start}
+.intro>.photoButton {position:sticky;top:var(--space-4)}
+.intro img {max-height:300px}
+.workTitle {font-size:22px;line-height:1.3}
+.work p,.visualItem figcaption {font-size:13px;line-height:1.65}
+.works .photoButton img {aspect-ratio:1;object-fit:contain}
+.visualGrid {scroll-padding-inline:1px;overscroll-behavior-inline:contain}
+.visualGrid img {height:180px;border-radius:var(--radius-image);object-fit:contain;background:#e7e4db}
+.visualSleeve {margin-top:var(--space-3);border-top:1px solid var(--rule);padding-top:var(--space-2)}
+.visualSleeve summary {cursor:pointer;font-size:14px;min-height:44px;padding-block:10px;width:fit-content;max-width:100%}
+.visualSleeve figure {max-width:240px;margin-top:var(--space-2)}
+.visualSleeve figcaption {display:none}
+.visualSleeve img {max-height:240px;object-fit:contain}
+.footer {gap:var(--space-4) var(--space-6);padding-block:var(--space-5)}
+.socialLinks a {min-height:44px;display:inline-flex;align-items:center}
+.small,.footnote {font-size:var(--type-caption);line-height:1.65}
+dialog {overscroll-behavior:contain;scrollbar-gutter:stable;max-width:calc(100% - 24px);border-radius:var(--radius-image)}
+body:has(dialog[open]) {overflow:hidden}
+.dialogTop {align-items:start}
+.dialogTop h2 {font-size:27px}
+.dialogTop button {flex:none}
+.lightboxPhoto {height:auto;max-height:65dvh;object-fit:contain}
+.lightboxControls {justify-content:space-between;direction:ltr}
+.lightboxControls button {min-width:48px}
+#gallery .portraitStage {height:clamp(220px,24vw,290px);scroll-snap-type:none}
+#gallery .portraitStage>.photoButton {
+  width:min(48%,250px);height:88%;backface-visibility:hidden;
+  transition:transform .65s var(--ease-ui),opacity .45s var(--ease-ui);
+  box-shadow:0 4px 12px #0003;
+}
+.portraitStage>[data-slot="3"] {--x:220%;--size:.5}
+.portraitStage>[data-slot="0"] {--size:1;--angle:0deg;--x:0%;opacity:1;filter:none}
+#gallery .portraitStage img {object-fit:contain;background:#171a19}
+.portraitStage>[data-slot="1"],.portraitStage>[data-slot="-1"] {--size:.83}
+.portraitStage>[data-slot="2"],.portraitStage>[data-slot="-2"] {--size:.7}
+#gallery .portraitStage>.sliderWrap {transition:none}
+@media(max-width:850px) {
+  .header {gap:var(--space-2)}
+  .nav.open {padding-block:var(--space-2);box-shadow:0 5px 10px #0001}
+  .nav.open a {min-height:44px}
+}
+@media(max-width:640px) {
+  :root {--pad:clamp(16px,4.6vw,20px);--type-section:30px;--type-subtitle:23px}
+  main>section:not(.hero),.supportBottom {padding-block:var(--space-5)}
+  .header {gap:8px;flex-wrap:nowrap}
+  .header .brand {font-size:20px;line-height:1.3}
+  .hero {gap:var(--space-3);padding-block:var(--space-2) var(--space-4)}
+  .heroMedia {width:min(62vw,230px);padding-top:var(--space-1)}
+  .caption {font-size:10px;margin-top:var(--space-3)}
+  #heroHeading {width:min(64vw,220px);margin-block:var(--space-2)}
+  #heroHeading .singleLogo {max-width:none}
+  .hero .sub {font-size:22px;line-height:1.5}
+  .hero .btnRow {display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:var(--space-3)}
+  .hero .btn {width:100%}
+  .folio {font-size:10px;letter-spacing:0}
+  .salePanel {grid-template-columns:minmax(0,1fr)}
+  .saleArt {display:none}
+  .songFlex,.about {gap:var(--space-4)}
+  .songFlex .cover {width:min(64vw,240px);justify-self:center}
+  .info {font-size:13px;margin-block:var(--space-3)}
+  .aboutPortrait img {height:280px;max-height:none;object-fit:contain;background:#e7e4db}
+  .intro {gap:var(--space-4)}
+  .intro>.photoButton {width:min(64vw,250px);justify-self:center;position:static}
+  .works {grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4) var(--space-2)}
+  .workTitle {font-size:20px}
+  .releaseCard h3 {font-size:25px}
+  .visualGrid>* {flex-basis:82%}
+  .visualGrid img {height:180px;object-fit:contain}
+  .mobileExcerpt:not(.expanded) {max-height:calc(1.7em * 2)}
+  html[lang=fa] .mobileExcerpt:not(.expanded) {max-height:calc(1.9em * 2)}
+  .excerptToggle {min-width:48px;min-height:44px}
+  .footer {gap:var(--space-4);padding-block:var(--space-4)}
+  .footer>div {min-width:0;max-width:100%}
+  .socialLinks {gap:6px 14px}
+  .socialLinks a {font-size:13px}
+  .dialogTop {gap:var(--space-2)}
+  .dialogTop h2 {font-size:24px}
+  .dialogTop button {padding-inline:12px}
+  #gallery .portraitStage {height:230px;margin-top:var(--space-3)}
+  #gallery .portraitStage>.photoButton {width:55%;max-width:220px;height:90%}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important}
+  .photoButton img,#gallery .portraitStage>.photoButton,.btn {transition:none}
+  .record i {animation:none}
+}
+
+/* Other music, inspired by the artist link-list reference. */
+#music{
+  --music-bg:#23264a;
+  background:var(--music-bg);color:#faf8f1;
+  border-color:#ffffff29;
+}
+#music .blockHeading{margin-bottom:6px}
+#music>p{color:#d5d5e1}
+#music .releaseGrid{display:flex;flex-direction:column;gap:0;max-width:780px;margin:28px auto 0}
+#music .releaseCard{
+  position:relative;display:grid;grid-template-columns:86px minmax(0,1fr) 32px;
+  align-items:center;gap:24px;min-height:132px;border:0;
+  border-bottom:1px solid #ffffff1c;padding:22px 0;
+}
+#music .releaseCard>img{width:86px;height:86px;object-fit:contain;border-radius:3px}
+#music .releaseCard>div{text-align:center}
+#music .releaseCard h3{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.4}
+#music .releaseCard .small{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#music .releaseCard .footnote{font-size:12px;margin-top:5px;color:#d5d5e1}
+#music .musicListen{
+  position:absolute;inset:0;border:0;border-radius:4px;background:none;color:inherit;
+  text-decoration:none;cursor:pointer;font-size:0;
+}
+#music .musicListen::after{content:'›';position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);font:34px/1 Arial}
+html[dir=rtl] #music .musicListen::after{content:'‹'}
+#music .musicListen[aria-disabled=true]{pointer-events:none}
+#music .musicListen:hover{background:#ffffff08}
+#music .musicAccessibleText{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#music .releaseCard.musicExtra:not(:has(img)){grid-template-columns:minmax(0,1fr) 32px}
+#music .releaseCard.musicExtra>button{font-size:0}
+#music .musicPlatforms{
+  display:flex;justify-content:center;gap:clamp(2px,2vw,22px);direction:ltr;
+  max-width:780px;margin:40px auto 0;
+}
+#music .musicPlatform{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:52px;height:52px;flex:0 1 52px;min-width:36px;
+  padding:8px;border:0;border-radius:8px;background:none;color:inherit;
+  text-decoration:none;transition:background-color .18s;
+}
+#music .musicPlatform svg{display:block;width:34px;height:34px}
+#music .musicPlatform:hover{background:#ffffff14}
+#music .musicLinkStatus{min-height:1.7em;text-align:center;font-size:12px;margin-top:12px;max-width:none}
+@media(max-width:640px){
+  #music .releaseGrid{margin-top:20px}
+  #music .releaseCard{grid-template-columns:70px minmax(0,1fr) 24px;gap:12px;min-height:112px;padding-block:18px}
+  #music .releaseCard>img{width:70px;height:70px}
+  #music .releaseCard h3{font-size:24px}
+  #music .musicPlatforms{gap:0;margin-top:30px;justify-content:space-between}
+  #music .musicPlatform{width:40px;height:46px;flex-basis:40px;min-width:0;padding:6px}
+  #music .musicPlatform svg{width:28px;height:28px}
+}

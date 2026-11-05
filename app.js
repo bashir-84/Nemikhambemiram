@@ -2,13 +2,12 @@
 'use strict';
 // CONFIGURATION: Change these values before publishing.
 const STATEMENT = {"en":["For me, making music is a way of giving form to the intensity and complexity of being human.","I experience emotions deeply, and music offers me a way to transform the turbulence within me into something tangible, meaningful, and beautiful. Through creation, pain, anger, fear, joy, and longing find their form and become part of something I can embrace. Singing, in particular, allows me to experience a sense of aliveness that makes the world feel inhabitable. It is through this process of creation that my experiences begin to make sense, and that I find meaning in being alive.","My musical language is rooted in years of classical violin training and a deep engagement with music, yet continually evolves through my fascination with alternative art pop, electronic textures, and contemporary songwriting. I am drawn to richness beneath apparent simplicity: unexpected combinations of sound, subtle harmonic relationships, expressive melodies, and intricate arrangements filled with small but meaningful details. I value emotional honesty, the natural and uncontrived human voice, and the way music can give words a life and emotional depth of their own. I seek a balance between musical intricacy and accessibility, creating work that brings the depth and refinement of classical influences into dialogue with the expressive possibilities of contemporary popular music.","As an independent artist in Iran, creating music has also been an act of persistence and self-determination. In an environment where women’s voices and artistic expression face significant restrictions, continuing to create and share my work is inseparable from my sense of identity. Independence, for me, is not simply a creative preference; it has also been a necessity. I have never felt compelled to shape my music around existing expectations or market conventions. Each work must emerge from within me, shaped by my experiences, knowledge, imagination, and sensibilities. I see my creations as something born from my inner world, something deeply and unmistakably my own, yet ultimately released into the world to find a life beyond me.","Ultimately, I hope my music can offer listeners more than a fleeting emotional experience. I want it to feel like entering an unfamiliar place where new meanings and perceptions begin to unfold; a space where beauty can momentarily lift us beyond the routines of everyday life and bring us closer to a deeper experience of human emotion, consciousness, and existence. Sharing this experience with others, and knowing that something I have created has moved them, is among the most meaningful parts of being an artist."],"fa":["برای من، موسیقی راهی است برای شکل دادن به شدت و پیچیدگی تجربه‌ی انسانی.","من احساسات را عمیق و شدید تجربه می‌کنم و موسیقی به من امکان می‌دهد تلاطم‌های درونی‌ام را به چیزی ملموس، معنادار و زیبا تبدیل کنم. در فرآیند آفرینش، درد، خشم، ترس، شادی و اشتیاق شکل پیدا می‌کنند و به بخشی از چیزی تبدیل می‌شوند که می‌توانم آن را بپذیرم و در آغوش بگیرم. آواز خواندن، به‌ویژه، به من امکان تجربه‌ی نوعی سرزندگی می‌دهد که جهان را برایم قابل زیستن می‌کند. در این فرآیند است که تجربه‌هایم برایم معنا پیدا می‌کنند و می‌توانم معنای زنده بودن را عمیق‌تر لمس کنم.","زبان موسیقایی من ریشه در سال‌ها آموزش و نوازندگی ویولن کلاسیک و مواجهه‌ی عمیق با موسیقی دارد، اما پیوسته تحت تأثیر علاقه‌ام به آلترناتیو آرت‌پاپ، بافت‌های الکترونیک و ترانه‌نویسی معاصر در حال تحول است. من به غنایی علاقه‌مندم که در پس سادگی ظاهری پنهان شده است: ترکیب‌های نامتعارف صدا، روابط هارمونیک غیرمنتظره، ملودی‌های بیانگر و تنظیم‌های ظریفی که از جزئیات کوچک اما معنادار شکل می‌گیرند. صداقت عاطفی، صدای طبیعی و بی‌تکلف انسان و توانایی موسیقی در جان بخشیدن به کلمات و چندبرابر کردن عمق عاطفی آن‌ها برایم اهمیت ویژه‌ای دارند. در پی یافتن تعادلی میان پیچیدگی موسیقایی و دسترس‌پذیری هستم؛ خلق آثاری که عمق و ظرافت تأثیرات موسیقی کلاسیک را با ظرفیت‌های بیانی موسیقی پاپ معاصر پیوند می‌دهند.","به‌عنوان هنرمندی مستقل در ایران، خلق موسیقی برای من همواره با پایداری و ایستادگی بر هویت شخصی‌ام همراه بوده است. در محیطی که صدای زنان و بیان هنری آن‌ها با محدودیت‌های جدی روبه‌روست، ادامه دادن به خلق و ارائه‌ی آثارم از هویت من جدایی‌ناپذیر است. استقلال برای من صرفاً یک انتخاب خلاقانه نیست؛ ضرورتی نیز بوده است. هرگز احساس نکرده‌ام که باید موسیقی‌ام را با انتظارات موجود یا قواعد بازار هماهنگ کنم. هر اثر باید از درون من سرچشمه بگیرد و از تجربه‌ها، دانش، تخیل و حساسیت‌های من شکل بگیرد. آثارم را موجوداتی می‌بینم که از جهان درونی‌ام متولد می‌شوند؛ چیزی عمیقاً و بی‌تردید متعلق به خودم، اما در نهایت رهاشده در جهان تا زندگی مستقلی فراتر از من پیدا کنند.","در نهایت، امیدوارم موسیقی‌ام چیزی فراتر از تجربه‌ای عاطفی و گذرا به شنونده ارائه دهد. دوست دارم مواجهه با آثارم شبیه ورود به مکانی ناآشنا باشد؛ جایی که معناها و ادراک‌های تازه‌ای شکل می‌گیرند. فضایی که زیبایی در آن می‌تواند ما را برای لحظاتی از روزمرگی فراتر ببرد و به تجربه‌ای عمیق‌تر از احساسات انسانی، آگاهی و هستی نزدیک کند. سهیم شدن این تجربه با دیگران و دانستن اینکه چیزی که خلق کرده‌ام توانسته آن‌ها را تحت تأثیر قرار دهد، یکی از معنادارترین جنبه‌های هنرمند بودن برای من است."]};
-const DRIVE_FILES = {"cover":"1m-OwBewEtr54jo9xW9ayyCazZpGxmpe7","doone":"1DqlvxpCZPKJAi3Meam2AoLu3UqZ4x7yj","night":"1unWhpBH5-hlnR-YvUClYCyTd-1O8bn6G","portrait_dark":"1egS4_9R8l0CKUWEKpbvdJgSJ5QCSO6Vi","portrait_bw":"1Ot6javdTT3yxjZq_XKslGNtAtdTQRPuA","portrait_bw2":"1D1hEnZtjyypaX23h2vL3leo3tonx88zJ","portrait_color":"1T74JXMNOZVqovMHvnhgYCYAYanMDI2N2","portrait_sitting":"1_sn48wPrqrjEYkGYTgjYkZaSnq6Ao7Mg","portrait_sea":"1aXOr_haMo-TW_VYB15n_tYixvnjgfV21","tas1":"1dAclSmQo8XZ_OqtZR-2Ulc55hQM9JYyM","tas2":"1tSGenmlSf0e0FIYKEq2yOLNqRJqqsC4m","tas3":"17cTCf9M3wxp4n15U_i6aRDr-DB3zZTbK","tas4":"184NxdEKpC7MZk-ViCS2WYAQLkCnZivpE","tas5":"1F7jEFfwy6ktNAbFAeZDY3VYv6Am1LI64"};
 // Fallback assets. GitHub version: local optimized WebP images; standalone: embedded WebP data URLs.
 const FALLBACK = {"cover":"assets/cover.webp","doone":"assets/doone.webp","night":"assets/night.webp","portrait_dark":"assets/portrait_dark.webp","portrait_bw":"assets/portrait_bw.webp","portrait_bw2":"assets/portrait_bw2.webp","portrait_color":"assets/portrait_color.webp","portrait_sitting":"assets/portrait_sitting.webp","portrait_sea":"assets/portrait_sea.webp","tas1":"assets/tas1.webp","tas2":"assets/tas2.webp","tas3":"assets/tas3.webp","tas4":"assets/tas4.webp","tas5":"assets/tas5.webp"};
-const driveUrl=(key)=>'https://drive.google.com/file/d/'+DRIVE_FILES[key]+'/view';
 const t=(key)=>I18N[language][key]||key;
 let language='en'; try{language=localStorage.getItem('nogol-language')==='fa'?'fa':'en'}catch(e){}
 let mode=SITE_CONFIG.releaseMode==='post'?'post':'pre';
+let renderedMode=null;
 const $$=(selector)=>Array.from(document.querySelectorAll(selector));
 function validUrl(u){try{return /^https:\/\//.test(u)&&new URL(u).hostname.length>2}catch(e){return false}}
 function setLink(el,href,missingKey='soon'){
@@ -22,6 +21,10 @@ function applyLang(next){
  $$('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===language);b.setAttribute('aria-pressed',String(b.dataset.lang===language))});
  $$('[data-i18n]').forEach(el=>{const s=I18N[language][el.dataset.i18n];if(s!==undefined)el.textContent=s});
  document.getElementById('statementBody').replaceChildren(...STATEMENT[language].map(txt=>{const p=document.createElement('p');p.textContent=txt;return p}));
+ const fa=language==='fa';
+ document.getElementById('menuToggle').setAttribute('aria-label',fa?'فهرست':'Menu');
+ document.getElementById('previousPhoto').setAttribute('aria-label',fa?'عکس قبلی':'Previous photo');
+ document.getElementById('nextPhoto').setAttribute('aria-label',fa?'عکس بعدی':'Next photo');
  updateModeText();
 }
 function determineMode(){
@@ -48,9 +51,12 @@ function updateModeText(){
  const post=mode==='post';
  const main=document.querySelector('main');
  const order=post?['streaming','officialVideo','release','visuals','beyond','gallery','about','music','tashang']:['early','release','visuals','gallery','about','music','tashang','support'];
- for(const id of order){
-   main.append(document.getElementById(id));
-   if(id==='about')main.append(document.querySelector('.quote'));
+ if(renderedMode!==mode){
+   for(const id of order){
+     main.append(document.getElementById(id));
+     if(id==='about')main.append(document.querySelector('.quote'));
+   }
+   renderedMode=mode;
  }
  document.querySelector('#visualsHeading').textContent=t(post?'postArchive':'visualTitle');
  document.querySelector('#visuals .muted').textContent=t(post?'postArchiveDesc':'visualIntro');
@@ -115,46 +121,106 @@ for (const track of document.querySelectorAll('.visualGrid')) {
     }
   }
 
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && document.getElementById('navigation').classList.contains('open')){
+    document.getElementById('navigation').classList.remove('open');
+    document.getElementById('menuToggle').setAttribute('aria-expanded','false');
+    document.getElementById('menuToggle').focus();
+  }
+});
+
 function initPortraitSlider(){
   const track=document.querySelector('#gallery .photoGrid');
   const cards=Array.from(track.children);
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let index=0, visible=false, timer, touchX=0;
+  let index=0, visible=false, hovering=false, timer;
+  let pointer=null, resumeAt=0, suppressClickUntil=0;
+
   function schedule(){
     clearTimeout(timer);
-    if(!reduced.matches && visible && !document.hidden &&
-       !document.querySelector('dialog[open]') && !track.matches(':focus-within')){
-      timer=setTimeout(()=>show(index+1),4000);
-    }
+    const keyboardFocus=cards.some(card=>card.matches(':focus-visible'));
+    if(reduced.matches || !visible || hovering || pointer || keyboardFocus ||
+       document.hidden || document.querySelector('dialog[open]'))return;
+    const delay=Math.max(4000,resumeAt-Date.now());
+    timer=setTimeout(()=>show(index+1),delay);
+  }
+  function interact(){
+    resumeAt=Date.now()+6500;
+    schedule();
   }
   function show(next){
     index=(next+cards.length)%cards.length;
     cards.forEach((card,i)=>{
       let slot=(i-index+cards.length)%cards.length;
       if(slot>cards.length/2)slot-=cards.length;
+      const previous=Number(card.dataset.slot);
+      if(Number.isFinite(previous) && Math.abs(previous-slot)>3){
+        card.classList.add('sliderWrap');
+        requestAnimationFrame(()=>requestAnimationFrame(()=>card.classList.remove('sliderWrap')));
+      }
       card.dataset.slot=String(slot);
       card.tabIndex=slot===0?0:-1;
+      card.setAttribute('aria-hidden',String(Math.abs(slot)>2));
     });
     schedule();
   }
   track.classList.add('portraitStage');
-  track.addEventListener('click',e=>{
-    const card=e.target.closest('button');
-    if(card && card!==cards[index]){
-      e.stopPropagation();
+  track.addEventListener('click',event=>{
+    if(performance.now()<suppressClickUntil){
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    const card=event.target.closest('button');
+    if(!card)return;
+    interact();
+    if(card!==cards[index]){
+      event.stopPropagation();
       show(cards.indexOf(card));
     }
   },true);
-  track.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX},{passive:true});
-  track.addEventListener('touchend',e=>{
-    const dx=e.changedTouches[0].clientX-touchX;
-    if(Math.abs(dx)>40)show(index+(dx<0?1:-1));
-  },{passive:true});
-  track.addEventListener('focusin',()=>clearTimeout(timer));
+  track.addEventListener('pointerdown',event=>{
+    if(!event.isPrimary || event.button!==0)return;
+    pointer={id:event.pointerId,x:event.clientX,y:event.clientY};
+    clearTimeout(timer);
+  });
+  window.addEventListener('pointerup',event=>{
+    if(!pointer || pointer.id!==event.pointerId)return;
+    const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;
+    pointer=null;
+    if(Math.abs(dx)>36 && Math.abs(dx)>Math.abs(dy)*1.2){
+      suppressClickUntil=performance.now()+500;
+      show(index+(dx<0?1:-1));
+    }
+    interact();
+  });
+  window.addEventListener('pointercancel',event=>{
+    if(pointer?.id!==event.pointerId)return;
+    pointer=null;
+    interact();
+  });
+  track.addEventListener('pointerenter',event=>{
+    if(event.pointerType==='mouse'){hovering=true;schedule()}
+  });
+  track.addEventListener('pointerleave',event=>{
+    if(event.pointerType==='mouse'){hovering=false;schedule()}
+  });
+  track.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft' || event.key==='ArrowRight'){
+      event.preventDefault();
+      show(index+(event.key==='ArrowRight'?1:-1));
+      cards[index].focus({preventScroll:true});
+      interact();
+    }
+  });
+  track.addEventListener('focusin',schedule);
   track.addEventListener('focusout',()=>setTimeout(schedule,0));
-  document.querySelector('#photoDialog').addEventListener('close',schedule);
+  for(const dialog of document.querySelectorAll('dialog')){
+    new MutationObserver(schedule).observe(dialog,{attributes:true,attributeFilter:['open']});
+    dialog.addEventListener('close',interact);
+  }
   document.addEventListener('visibilitychange',schedule);
-  new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;schedule()}).observe(track);
+  new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;schedule()},{threshold:.25}).observe(track);
   reduced.addEventListener('change',schedule);
   show(0);
 }
