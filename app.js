@@ -106,7 +106,6 @@ function init(){renderSharedLinks();applyLang(language);
 init();
 
 for (const track of document.querySelectorAll('.visualGrid')) {
-  if (track.classList.contains('visualGrid')) {
     for (const key of ['portrait_dark','portrait_sea','portrait_bw']) {
       const source=document.querySelector('.photoGrid [data-gallery="'+key+'"]');
       const figure=document.createElement('figure');
@@ -116,36 +115,18 @@ for (const track of document.querySelectorAll('.visualGrid')) {
       track.append(figure);
     }
   }
-  const controls=document.createElement('div');
-  controls.className='galleryControls';
-  track.after(controls);
-  for(const step of [-1,1]){
-    const button=document.createElement('button');
-    const refresh=()=>{
-      const fa=document.documentElement.lang==='fa';
-      button.textContent=(step===1)!==fa?'→':'←';
-      button.setAttribute('aria-label',fa?(step===1?'عکس بعدی':'عکس قبلی'):(step===1?'Next photo':'Previous photo'));
-    };
-    refresh();
-    new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-    button.onclick=()=>track.scrollBy({left:(document.documentElement.dir==='rtl'?-1:1)*step*(track.firstElementChild.getBoundingClientRect().width+14),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-    controls.append(button);
-  }
-}
 
 function initPortraitSlider(){
   const track=document.querySelector('#gallery .photoGrid');
   const cards=Array.from(track.children);
-  const controls=document.createElement('div');
-  controls.className='galleryControls portraitControls';
-  controls.dir='ltr';
-  track.after(controls);
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let index=0, paused=reduced.matches, visible=false, timer, touchX;
+  let index=0, visible=false, timer, touchX=0;
   function schedule(){
     clearTimeout(timer);
-    if(!paused && visible && !document.hidden && !document.querySelector('dialog[open]') && !track.matches(':focus-within'))
+    if(!reduced.matches && visible && !document.hidden &&
+       !document.querySelector('dialog[open]') && !track.matches(':focus-within')){
       timer=setTimeout(()=>show(index+1),4000);
+    }
   }
   function show(next){
     index=(next+cards.length)%cards.length;
@@ -155,37 +136,27 @@ function initPortraitSlider(){
       card.dataset.slot=String(slot);
       card.tabIndex=slot===0?0:-1;
     });
-    counter.textContent=(index+1)+' / '+cards.length;
     schedule();
   }
-  function control(symbol,action){
-    const button=document.createElement('button');
-    button.type='button';button.textContent=symbol;
-    controls.append(button);button.onclick=action;
-    return button;
-  }
-  const prev=control('←',()=>show(index-1));
-  const toggle=control('',()=>{paused=!paused;labels();schedule()});
-  const counter=document.createElement('span');controls.append(counter);
-  const next=control('→',()=>show(index+1));
-  function labels(){
-    const fa=document.documentElement.lang==='fa';
-    [[prev,fa?'عکس قبلی':'Previous photo'],[next,fa?'عکس بعدی':'Next photo'],[toggle,paused?(fa?'پخش':'Play'):(fa?'مکث':'Pause')]].forEach(([el,label])=>el.setAttribute('aria-label',label));
-    toggle.textContent=paused?'▶':'Ⅱ';
-  }
-  new MutationObserver(labels).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   track.classList.add('portraitStage');
   track.addEventListener('click',e=>{
     const card=e.target.closest('button');
-    if(card && card!==cards[index]){e.stopPropagation();show(cards.indexOf(card))}
+    if(card && card!==cards[index]){
+      e.stopPropagation();
+      show(cards.indexOf(card));
+    }
   },true);
   track.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX},{passive:true});
-  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>40){if(e.cancelable)e.preventDefault();show(index+(dx<0?1:-1))}},{passive:false});
-  track.addEventListener('focusin',schedule);
+  track.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-touchX;
+    if(Math.abs(dx)>40)show(index+(dx<0?1:-1));
+  },{passive:true});
+  track.addEventListener('focusin',()=>clearTimeout(timer));
   track.addEventListener('focusout',()=>setTimeout(schedule,0));
   document.querySelector('#photoDialog').addEventListener('close',schedule);
   document.addEventListener('visibilitychange',schedule);
   new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;schedule()}).observe(track);
-  labels();show(0);
+  reduced.addEventListener('change',schedule);
+  show(0);
 }
 initPortraitSlider();
