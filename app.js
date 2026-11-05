@@ -41,7 +41,6 @@ function updateModeText(){
  document.getElementById('dateValue').textContent=SITE_CONFIG.releaseDate?new Date(SITE_CONFIG.releaseDate).toLocaleDateString(language==='fa'?'fa-IR':'en-GB',{year:'numeric',month:'long',day:'numeric'}):t('tba');
  document.getElementById('telegramStatus').textContent=validUrl(SITE_CONFIG.telegramPreorderUrl)?'':t('earlyMissing');
  document.getElementById('nightStatus').textContent=validUrl(SITE_CONFIG.directNight)?'':t('nightSoon');
- document.getElementById('coverDriveLink').href=driveUrl('cover');
  setLink(document.getElementById('telegramPreorder'),SITE_CONFIG.telegramPreorderUrl,'earlyMissing');
  setLink(document.getElementById('dooneLink'),SITE_CONFIG.directDoone);
  setLink(document.getElementById('nightLink'),SITE_CONFIG.directNight,'nightSoon');
@@ -90,7 +89,7 @@ function renderSharedLinks(){
 }
 const galleryKeys=['portrait_bw','portrait_color','portrait_sitting','portrait_bw2','portrait_dark','portrait_sea','cover','tas1','tas2','tas3','tas4','tas5'];let currentPhoto=0;
 function openPhoto(key){currentPhoto=Math.max(0,galleryKeys.indexOf(key));updatePhoto();document.getElementById('photoDialog').showModal()}
-function updatePhoto(){const key=galleryKeys[currentPhoto],img=document.getElementById('lightboxPhoto');img.src=FALLBACK[key];img.alt=document.querySelector('[data-gallery="'+key+'"] img')?.alt||key;document.getElementById('viewDrive').href=driveUrl(key)}
+function updatePhoto(){const key=galleryKeys[currentPhoto],img=document.getElementById('lightboxPhoto');img.src=FALLBACK[key];img.alt=document.querySelector('[data-gallery="'+key+'"] img')?.alt||key}
 function navPhoto(delta){currentPhoto=(currentPhoto+delta+galleryKeys.length)%galleryKeys.length;updatePhoto()}
 function init(){renderSharedLinks();applyLang(language);
  $$('[data-lang]').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
