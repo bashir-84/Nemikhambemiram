@@ -45,3 +45,7 @@ html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
 .portraitStage>[data-slot="3"]{opacity:0;pointer-events:none;z-index:0}
 .portraitControls{justify-content:center;align-items:center;font:13px monospace}
 @media(prefers-reduced-motion:reduce){.portraitStage>.photoButton{transition:none}}
+
+@keyframes record-spin{to{transform:rotate(1turn)}}
+.record i{animation:record-spin 18s linear infinite;transform-origin:50% 50%}
+@media(prefers-reduced-motion:reduce){.record i{animation:none}}
