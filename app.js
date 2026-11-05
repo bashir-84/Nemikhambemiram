@@ -159,3 +159,42 @@ function initPortraitSlider(){
   show(0);
 }
 initPortraitSlider();
+
+function initMobileExcerpts(){
+  const groups=[
+    {selector:'#about .aboutContent',id:'aboutMore'},
+    {selector:'#tashang .intro > div',id:'tasMore'}
+  ];
+  for(const {selector,id} of groups){
+    const container=document.querySelector(selector);
+    const paragraphs=Array.from(container.children).filter(el=>el.tagName==='P');
+    if(paragraphs.length<2)continue;
+    const extra=document.createElement('div');
+    extra.id=id;
+    extra.className='mobileExcerpt';
+    paragraphs[1].before(extra);
+    paragraphs.slice(1).forEach(p=>extra.append(p));
+    const toggle=document.createElement('button');
+    toggle.type='button';
+    toggle.className='excerptToggle';
+    toggle.setAttribute('aria-controls',id);
+    toggle.setAttribute('aria-expanded','false');
+    extra.after(toggle);
+    function refresh(){
+      const expanded=extra.classList.contains('expanded');
+      const fa=document.documentElement.lang==='fa';
+      const label=expanded?(fa?'نمایش کمتر':'Show less'):(fa?'خواندن ادامهٔ متن':'Read more');
+      toggle.textContent=expanded?(fa?'بستن':'Less'):'…';
+      toggle.setAttribute('aria-label',label);
+      toggle.title=label;
+      toggle.setAttribute('aria-expanded',String(expanded));
+    }
+    toggle.addEventListener('click',()=>{
+      extra.classList.toggle('expanded');
+      refresh();
+    });
+    new MutationObserver(refresh).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    refresh();
+  }
+}
+initMobileExcerpts();

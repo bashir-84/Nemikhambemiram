@@ -49,3 +49,23 @@ html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
 @keyframes record-spin{to{transform:rotate(1turn)}}
 .record i{animation:record-spin 18s linear infinite;transform-origin:50% 50%}
 @media(prefers-reduced-motion:reduce){.record i{animation:none}}
+
+.mobileExcerpt{margin-top:.85em}
+.excerptToggle{display:none}
+@media(max-width:640px){
+  .mobileExcerpt:not(.expanded){position:relative;max-height:3.9em;overflow:hidden}
+  .mobileExcerpt:not(.expanded)>p:not(:first-child){display:none}
+  .mobileExcerpt:not(.expanded)::after{
+    content:"";position:absolute;inset:35% 0 0;
+    background:linear-gradient(transparent,var(--excerpt-bg));
+    pointer-events:none;
+  }
+  #about{--excerpt-bg:#f3efe5}
+  #tashang{--excerpt-bg:#1e2120}
+  .excerptToggle{
+    display:block;min-width:48px;min-height:44px;padding:0 12px;
+    margin:0 auto 8px;border:0;background:transparent;color:inherit;
+    font:700 25px/1.3 inherit;cursor:pointer;
+  }
+  .mobileExcerpt.expanded+.excerptToggle{font-size:14px;margin-top:8px}
+}
