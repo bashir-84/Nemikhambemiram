@@ -95,3 +95,21 @@ body {
   background-size: var(--paper-grid-size) var(--paper-grid-size), var(--paper-grid-size) var(--paper-grid-size), auto;
   background-color: var(--paper);
 }
+
+/* Scroll parallax: the paper grid moves faster than foreground content.
+   The hero's local background scrolls naturally, so it needs only the
+   additional 0.8x offset to match the fixed page grid's 1.8x motion. */
+body {
+  background-attachment: fixed;
+  background-position: 0 var(--grid-page-offset, 0px);
+}
+.hero {
+  background-position:
+    0 var(--grid-hero-offset, 0px),
+    0 var(--grid-hero-offset, 0px),
+    center center;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { background-position: 0 0; }
+  .hero { background-position: 0 0, 0 0, center center; }
+}
