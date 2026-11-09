@@ -73,8 +73,8 @@ html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
 /* Subtle square-grid paper background inspired by the Nogol link-page reference.
    Keep the navigation header and existing dark / blue sections unpatterned. */
 :root {
-  --paper-grid-size: 40px;
-  --paper-grid-line: rgba(255,255,255,.72);
+  --paper-grid-size: 27px;
+  --paper-grid-line: rgba(255,255,255,.38);
   --paper-grid:
     linear-gradient(to right, var(--paper-grid-line) 2px, transparent 2px),
     linear-gradient(to bottom, var(--paper-grid-line) 2px, transparent 2px);
