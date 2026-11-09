@@ -198,3 +198,33 @@ function initMobileExcerpts(){
   }
 }
 initMobileExcerpts();
+
+/* Faster-than-scroll background grid, without moving any page content. */
+function initGridParallax(){
+  const root=document.documentElement;
+  const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let scheduled=false;
+  function render(){
+    scheduled=false;
+    const scroll=window.scrollY || window.pageYOffset || 0;
+    root.style.setProperty('--grid-page-offset', (-scroll*1.8).toFixed(2)+'px');
+    root.style.setProperty('--grid-hero-offset', (-scroll*0.8).toFixed(2)+'px');
+  }
+  function onScroll(){
+    if(scheduled || motionPreference.matches)return;
+    scheduled=true;
+    window.requestAnimationFrame(render);
+  }
+  function onPreferenceChange(){
+    if(motionPreference.matches){
+      root.style.removeProperty('--grid-page-offset');
+      root.style.removeProperty('--grid-hero-offset');
+    }else{
+      onScroll();
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  motionPreference.addEventListener('change',onPreferenceChange);
+  onPreferenceChange();
+}
+initGridParallax();
