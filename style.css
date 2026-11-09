@@ -69,3 +69,29 @@ html[lang=fa] #heroHeading{margin-right:auto;margin-left:0}
   }
   .mobileExcerpt.expanded+.excerptToggle{font-size:14px;margin-top:8px}
 }
+
+/* Subtle square-grid paper background inspired by the Nogol link-page reference.
+   Keep the navigation header and existing dark / blue sections unpatterned. */
+:root {
+  --paper-grid-size: 40px;
+  --paper-grid-line: rgba(255,255,255,.72);
+  --paper-grid:
+    linear-gradient(to right, var(--paper-grid-line) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--paper-grid-line) 2px, transparent 2px);
+}
+body {
+  background-color: var(--paper);
+  background-image: var(--paper-grid);
+  background-size: var(--paper-grid-size) var(--paper-grid-size);
+}
+.header {
+  background: var(--paper);
+}
+.hero {
+  background-image:
+    linear-gradient(to right, var(--paper-grid-line) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--paper-grid-line) 2px, transparent 2px),
+    radial-gradient(ellipse at 80% 75%, #dedfd9, transparent 52%);
+  background-size: var(--paper-grid-size) var(--paper-grid-size), var(--paper-grid-size) var(--paper-grid-size), auto;
+  background-color: var(--paper);
+}
