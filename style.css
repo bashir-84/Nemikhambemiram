@@ -113,3 +113,18 @@ body {
   body { background-position: 0 0; }
   .hero { background-position: 0 0, 0 0, center center; }
 }
+
+/* Compact music catalogue */
+.musicList {max-width: 1050px; margin-top: 2rem; --music-icon-cutout: #f2eee5}
+.musicGroupTitle {font-size: 1.25rem; margin: 2rem 0 .7rem; font-weight: 600; text-align: start}
+.musicRow {display:grid; grid-template-columns: 88px minmax(0,1fr) auto; gap: 1.15rem; align-items:center; padding: 1rem 0; border-top: 1px solid rgba(20,20,20,.24)}
+.musicCover {display:block; width:88px; height:88px; aspect-ratio:1; object-fit:cover; border-radius:5px}
+.musicDetails {min-width:0; text-align:left}
+.musicDetails h4 {font-size:1.08rem; line-height:1.3; margin:0 0 .35rem; overflow-wrap:anywhere}
+.musicYear {font-weight:400; color:#57534d; font-size:.85em; white-space:nowrap}
+.musicDetails p {font-size:.83rem; line-height:1.45; color:#55514c; margin:0; max-width:64ch}
+.musicPlatforms {display:flex; gap:.35rem; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+.platformIcon {color:#202020; width:42px; height:42px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(20,20,20,.25); border-radius:50%; transition:background .2s,color .2s}
+.platformIcon:hover,.platformIcon:focus-visible {background:#202020;color:#fff; --music-icon-cutout:#202020}
+.platformIcon svg {width:23px;height:23px;display:block}
+@media(max-width:600px){.musicRow{grid-template-columns:64px minmax(0,1fr); gap:.7rem .85rem; padding:.85rem 0}.musicCover{width:64px;height:64px;align-self:start}.musicDetails h4{font-size:1rem}.musicDetails p{font-size:.8rem}.musicPlatforms{grid-column:2;justify-content:flex-start}.platformIcon{width:40px;height:40px}.musicGroupTitle{margin-top:1.8rem}}
