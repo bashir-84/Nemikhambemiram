@@ -39,7 +39,7 @@ function updateModeText(){
  document.getElementById('songPrimaryText').textContent=t(mode==='pre'?'songButton':'songButtonPost');
  document.getElementById('songPrimary').href=mode==='pre'?'#early':'#streaming';
  document.getElementById('dateValue').textContent=SITE_CONFIG.releaseDate?new Date(SITE_CONFIG.releaseDate).toLocaleDateString(language==='fa'?'fa-IR':'en-GB',{year:'numeric',month:'long',day:'numeric'}):t('tba');
- document.getElementById('telegramStatus').textContent=validUrl(SITE_CONFIG.telegramPreorderUrl)?'':t('earlyMissing');
+
  setLink(document.getElementById('telegramPreorder'),SITE_CONFIG.telegramPreorderUrl,'earlyMissing');
  drawStreamLinks();drawVideo();drawCountdown();
  const post=mode==='post';
@@ -79,7 +79,7 @@ function drawVideo(){
  else{const p=document.createElement('p');p.textContent=t('videoDesc');p.style.padding='20px';frame.append(p)}
  for(const [id,key] of [['interviewLink','interview'],['reactionsLink','reactions']]){const a=document.getElementById(id);setLink(a,SITE_CONFIG.videoLinks[key]);a.textContent=validUrl(SITE_CONFIG.videoLinks[key])?'YouTube ↗':t('soon')}
 }
-function drawCountdown(){const el=document.getElementById('countdown');el.replaceChildren();if(mode!=='pre'||!SITE_CONFIG.releaseDate){el.hidden=true;return}const delta=Date.parse(SITE_CONFIG.releaseDate)-Date.now();if(!Number.isFinite(delta)||delta<=0){el.hidden=true;return}el.hidden=false;const vals=[Math.floor(delta/86400000),Math.floor(delta/3600000)%24,Math.floor(delta/60000)%60,Math.floor(delta/1000)%60],labels=language==='fa'?['روز','ساعت','دقیقه','ثانیه']:['Days','Hours','Min','Sec'];vals.forEach((n,i)=>{const box=document.createElement('div');const b=document.createElement('b'),s=document.createElement('span');b.textContent=String(n).padStart(2,'0');s.textContent=labels[i];box.append(b,s);el.append(box)})}
+function drawCountdown(){const el=document.getElementById('earlyCountdown');if(!el)return;const delta=Math.max(0,Date.parse(SITE_CONFIG.earlyCountdownEnd)-Date.now());if(!Number.isFinite(delta))return;const vals=[Math.floor(delta/86400000),Math.floor(delta/3600000)%24,Math.floor(delta/60000)%60,Math.floor(delta/1000)%60],labels=language==='fa'?['روز','ساعت','دقیقه','ثانیه']:['Days','Hours','Min','Sec'];el.replaceChildren();vals.forEach((n,i)=>{const box=document.createElement('div'),b=document.createElement('b'),s=document.createElement('span');b.textContent=String(n).padStart(2,'0');s.textContent=labels[i];box.append(b,s);el.append(box)})}
 function renderSharedLinks(){
  const lookup={support:SITE_CONFIG.supportUrl,...SITE_CONFIG.socials,tashangYoutube:SITE_CONFIG.tashangLinks.youtube,tashangSoundcloud:SITE_CONFIG.tashangLinks.soundcloud,tashangInstagram:SITE_CONFIG.tashangLinks.instagram};
  $$('[data-link]').forEach(el=>setLink(el,lookup[el.dataset.link]));

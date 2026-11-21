@@ -132,3 +132,5 @@ body {
 .reymitBox{margin-top:26px;width:100%;min-height:130px;display:flex;align-items:center;gap:20px;padding:24px clamp(20px,3vw,38px);border:1px solid rgba(255,255,255,.7);border-radius:12px;text-decoration:none;background:rgba(255,255,255,.07);transition:background .2s,transform .2s}.reymitBox:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}.reymitHeart{font-size:2.4rem;line-height:1}.reymitWords{display:flex;flex-direction:column;gap:4px}.reymitWords strong{font-size:clamp(1.1rem,2vw,1.45rem)}.reymitWords span{font-size:.9rem;opacity:.8}.reymitAction{margin-inline-start:auto;font-size:1.5rem}@media(max-width:640px){.reymitBox{min-height:108px;gap:15px;padding:20px}.reymitHeart{font-size:2rem}}
 
 .reymitFrame{margin-top:28px;width:100%;height:720px;overflow:hidden;border-radius:12px;background:#fff}.reymitFrame iframe{border:0;width:100%;height:100%;display:block}@media(max-width:640px){.reymitFrame{height:650px}}
+
+.sale .earlyCountdown{margin:24px 0 6px;direction:ltr}.sale #telegramPreorder{display:inline-flex;justify-content:center;min-height:48px}
