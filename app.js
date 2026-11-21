@@ -40,7 +40,7 @@ function updateModeText(){
  document.getElementById('songPrimary').href=mode==='pre'?'#early':'#streaming';
  document.getElementById('dateValue').textContent=SITE_CONFIG.releaseDate?new Date(SITE_CONFIG.releaseDate).toLocaleDateString(language==='fa'?'fa-IR':'en-GB',{year:'numeric',month:'long',day:'numeric'}):t('tba');
 
- setLink(document.getElementById('telegramPreorder'),SITE_CONFIG.telegramPreorderUrl,'earlyMissing');
+
  drawStreamLinks();drawVideo();drawCountdown();
  const post=mode==='post';
  const main=document.querySelector('main');
