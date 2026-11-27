@@ -37,7 +37,7 @@ function updateModeText(){
  primary.href=mode==='pre'?'#early':'#streaming';secondary.href=mode==='pre'?'#visuals':'#officialVideo';
  document.getElementById('songDescription').textContent=t(mode==='pre'?'songDesc':'songDescPost');
  document.getElementById('songPrimaryText').textContent=t(mode==='pre'?'songButton':'songButtonPost');
- document.getElementById('songPrimary').href=mode==='pre'?'#early':'#streaming';
+ document.getElementById('songPrimary').href=mode==='pre'?'tg://resolve?domain=NemikhamBemiram_bot':'#streaming';
  document.getElementById('dateValue').textContent=SITE_CONFIG.releaseDate?new Date(SITE_CONFIG.releaseDate).toLocaleDateString(language==='fa'?'fa-IR':'en-GB',{year:'numeric',month:'long',day:'numeric'}):t('tba');
 
 
