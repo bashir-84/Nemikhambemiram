@@ -147,3 +147,10 @@ body {
 .sale .earlyCountdown{display:flex;gap:clamp(8px,1.4vw,16px);margin:28px 0 12px}.sale .earlyCountdown>div{min-width:clamp(62px,8vw,104px);padding:12px 8px;text-align:center;border:1px solid rgba(255,255,255,.5);border-radius:10px;background:rgba(255,255,255,.09)}.sale .earlyCountdown b{font-size:clamp(2rem,4vw,3.7rem);line-height:1.1;font-variant-numeric:tabular-nums}.sale .earlyCountdown span{font-size:.8rem;margin-top:6px;opacity:.85}@media(max-width:400px){.sale .earlyCountdown{gap:6px}.sale .earlyCountdown>div{min-width:0;flex:1;padding:10px 4px}.sale .earlyCountdown b{font-size:1.85rem}}
 
 .telegramBotId{display:block;width:max-content;max-width:100%;margin-top:8px;font-size:.82rem;color:inherit;opacity:.8;direction:ltr;unicode-bidi:isolate;text-decoration:none}.telegramBotId:hover{text-decoration:underline;opacity:1}
+
+@font-face{font-family:Alibaba;src:url("assets/fonts/Alibaba-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Alibaba;src:url("assets/fonts/Alibaba-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:Sahel;src:url("assets/fonts/Sahel-FD.ttf") format("truetype");font-weight:400;font-display:swap}
+html[lang="fa"]{--serif:Alibaba,Tahoma,sans-serif}
+html[lang="fa"] body,html[lang="fa"] :is(.folio,.caption,.eyebrow,.number,.langSwitch button){font-family:Sahel,Tahoma,sans-serif}
+html[lang="fa"] :is(h1,h2,h3,h4,h5,h6,.workTitle,.brand){font-family:Alibaba,Tahoma,sans-serif;letter-spacing:normal}
