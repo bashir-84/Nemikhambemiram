@@ -154,3 +154,5 @@ body {
 html[lang="fa"]{--serif:Alibaba,Tahoma,sans-serif}
 html[lang="fa"] body,html[lang="fa"] :is(.folio,.caption,.eyebrow,.number,.langSwitch button){font-family:Sahel,Tahoma,sans-serif}
 html[lang="fa"] :is(h1,h2,h3,h4,h5,h6,.workTitle,.brand){font-family:Alibaba,Tahoma,sans-serif;letter-spacing:normal}
+
+@media(max-width:640px){.reymitFrame{height:950px;width:100vw;max-width:none;margin-inline:calc(50% - 50vw);border-radius:0}}
