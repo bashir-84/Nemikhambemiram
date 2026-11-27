@@ -2,7 +2,7 @@ const SITE_CONFIG = {
   "releaseMode": "pre",
   "releaseDate": null,
   "previewControls": false,
-  "telegramPreorderUrl": "https://t.me/TheNightNogolBot",
+  "telegramPreorderUrl": "https://t.me/NemikhamBemiram_bot",
   "earlyCountdownEnd": "2026-11-26T08:49:23+00:00",
   "supportUrl": "https://reymit.ir/nogol.zakerian",
   "directDoone": "https://nogolzakerian.bandcamp.com/track/doone",
